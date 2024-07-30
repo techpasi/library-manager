@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "d82f56a4-f57c-488a-8473-c92dbddb193b",
+		"name": "Library-Manger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8735569"
+	},
+	"item": [
+		{
+			"name": "Create users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Admin\",\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/api/user/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/auth/login?username=admin&password=admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						},
+						{
+							"key": "password",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/book?unique=true",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"book"
+					],
+					"query": [
+						{
+							"key": "unique",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": \"Pasindu Dulanja\",\n    \"title\": \"Harry Potter\",\n    \"isbn\": \"001-3-16-148410-0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/api/book/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Create borrower",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Mark\",\n    \"email\": \"mark@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/api/borrower/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all borrowers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8081/api/borrower"
+			},
+			"response": []
+		},
+		{
+			"name": "Create book-borrow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": 1,\n    \"borrowerId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/api/book-borrow/borrow"
+			},
+			"response": []
+		},
+		{
+			"name": "Return book-borrow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": 1,\n    \"borrowerId\": 1,\n    \"returnDate\":\"2024-07-30T00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8081/api/book-borrow/return"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all book-borrow",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyMjM2Nzc2MywiZXhwIjoxNzIyNDU0MTYzfQ.0xRGkh0dYMZ96S7RaBFk7UKWDBHPv0Fc8R99QKJV8DM",
+						"type": "text"
+					}
+				],
+				"url": "localhost:8081/api/book-borrow"
+			},
+			"response": []
+		}
+	]
+}
