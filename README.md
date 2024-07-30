@@ -25,9 +25,11 @@ This project provides a RESTful API designed for library management. It facilita
 - Login to the system and get the token.
 - Access the APIs passing the token.
 
-## API Document
+
+## API Specification
 - Document: https://docs.google.com/document/d/1XETQ19rvhauHYtTSdincVlBBLiGcIMmeVS-ji8Vhuzc/edit?usp=sharing
 - swagger: /swagger-ui/index.html
+- postman collection: /postman/Library-Manger.postman_collection.json
 
 ## Database
 ![ER drawio](https://github.com/user-attachments/assets/af94dd98-1f2d-4247-b360-7209c4f4c2c5)
