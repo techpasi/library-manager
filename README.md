@@ -20,6 +20,7 @@ This project provides a RESTful API designed for library management. It facilita
 ## Setup
 - Install the Docker.
 - Clone the project.
+- Build the target file "mvn clean install -DskipTests"
 - Start the docker container "docker-compose up -d --build"
 - Create the admin user to access the system
 - Login to the system and get the token.
